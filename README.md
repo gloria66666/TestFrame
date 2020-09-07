@@ -1,7 +1,9 @@
 # TestFrame
 ## auto test framework
 ### 环境
-language:Python 3.7 browser:Firefox
+language:Python 3.7 
+
+browser:Firefox
 ### 前言
 本工具利用selenium和unittest搭建了一个自动化web测试框架。
 在ini配置文件中可以设置通用信息如url和browser，在.xls文件中可填入参数如要执行的操作，每步操作之后的sleep时间，一系列操作后的assert。
@@ -43,10 +45,10 @@ self.browser = Browser(BaiduTest.browser, 'https://www.iziqian.com/')
 self.driver = self.browser.open_browser()
 driver = Page(self.driver)
 
-# 3,3：从第三行循环执行到第三行，可自己依据excel文件中内容自行填写
+# 1,3：从第一行循环执行到第三行，可自己依据excel文件中内容自行填写
 # 可通过config.get_value()读取case_col、sleep_col、assert_col，也可自行指定
 # sleep_bool=False则不读取sleep列，反之则读取并进行相应时间的sleep
 # assert_bool=False则不读取assert列，反之则读取并执行相应assert
-execute(self.excl, driver, 3, 3, self,
+execute(self.excl, driver, 1, 3, self,
                   case_col=1, sleep_col=2, assert_col=3, sleep_bool=False, assert_bool=False)
 ```
